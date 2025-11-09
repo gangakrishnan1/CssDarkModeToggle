@@ -20,7 +20,7 @@ label {
   transition: 0.4s;
 }
 
-label:after {
+label::after {
   content: "";
   width: 180px;
   height: 180px;
