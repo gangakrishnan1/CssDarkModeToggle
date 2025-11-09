@@ -4,26 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dark / Light Toggle</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <input type="checkbox" id="class-toggle">
-  <label for="class-toggle">
 
-    <!-- Moon SVG -->
-    <svg width="80" height="80" class="moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M13 6V3M18.5 12V7M14.5 4.5H11.5M21 9.5H16M15.5548 16.8151C16.7829 16.8151 17.9493 16.5506 19 16.0754C17.6867 18.9794 14.7642 21 11.3698 21C6.74731 21 3 17.2527 3 12.6302C3 9.23576 5.02061 6.31331 7.92462 5C7.44944 6.05072 7.18492 7.21708 7.18492 8.44523C7.18492 13.0678 10.9322 16.8151 15.5548 16.8151Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-
-    <!-- Sun SVG -->
-    <svg width="80" height="80" class="sun" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M32 14a18 18 0 1 0 0 36 18 18 0 0 0 0-36zm0 34a16 16 0 1 1 0-32 16 16 0 0 1 0 32z" fill="#000"/>
-      <path d="M32 1v10M32 53v10M1 32h10M53 32h10M11 11l7 7M46 46l7 7M11 53l7-7M46 18l7-7" stroke="#000" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-
+  <input type="checkbox" id="darkmode-toggle">
+  <label for="darkmode-toggle">
+    <i class="fa-solid fa-sun sun"></i>
+    <i class="fa-solid fa-moon moon"></i>
   </label>
 
   <div class="background"></div>
+
 </body>
 </html>

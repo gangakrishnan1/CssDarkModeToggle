@@ -1,17 +1,12 @@
-/* Reset and center content */
 body {
   margin: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  transition: background 0.5s ease;
 }
 
-/* Toggle switch container */
 label {
   width: 500px;
   height: 200px;
@@ -19,14 +14,13 @@ label {
   display: block;
   background: #ebebeb;
   border-radius: 200px;
-  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.4),
-              inset 0 -5px 15px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4),
+              inset 0px -5px 15px rgba(255,255,255,0.4);
   cursor: pointer;
-  transition: background 0.4s ease;
+  transition: 0.4s;
 }
 
-/* Toggle circle (the knob) */
-label::after {
+label:after {
   content: "";
   width: 180px;
   height: 180px;
@@ -35,75 +29,71 @@ label::after {
   left: 10px;
   background: linear-gradient(180deg, #ffcc89, #d8860b);
   border-radius: 50%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  transition: 0.4s;
 }
 
-/* Hide checkbox */
 input {
   width: 0;
   height: 0;
   visibility: hidden;
 }
 
-/* When dark mode is active */
 input:checked + label {
   background: #242424;
 }
 
-input:checked + label::after {
-  left: calc(100% - 190px);
+input:checked + label:after {
+  left: 490px;
+  transform: translateX(-100%);
   background: linear-gradient(180deg, #777, #3a3a3a);
 }
 
-/* Click effect */
-label:active::after {
-  width: 220px;
+label:active:after {
+  width: 260px;
 }
 
-/* Background color transition */
-.background {
+
+label i {
   position: absolute;
+  top: 60px;
+  font-size: 70px;
+  transition: 0.4s;
+}
+
+label .sun {
+  left: 50px;
+  color: #f39c12;
+  opacity: 1;
+}
+
+label .moon {
+  right: 60px;
+  color: #f1c40f;
+  opacity: 0;
+}
+
+input:checked + label .sun {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+input:checked + label .moon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.background {
   width: 100vw;
   height: 100vh;
-  z-index: -1;
   background: #fff;
-  transition: background 0.5s ease;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background 0.4s;
 }
 
 input:checked + label + .background {
-  background: #121212;
-}
-
-/* SVG Icon positioning */
-label svg {
-  position: absolute;
-  width: 120px;
-  top: 40px;
-  transition: fill 0.4s ease, opacity 0.4s ease;
-}
-
-/* Sun icon */
-label svg.sun {
-  left: 40px;
-  fill: #000;
-  opacity: 1;
-}
-
-/* Moon icon */
-label svg.moon {
-  right: 40px;
-  fill: #000;
-  opacity: 0;
-}
-
-/* When checked - show moon, hide sun */
-input:checked + label svg.sun {
-  opacity: 0;
-  fill: #777;
-}
-
-input:checked + label svg.moon {
-  opacity: 1;
-  fill: #fff;
+  background: #242424;
 }
